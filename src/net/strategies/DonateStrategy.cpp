@@ -33,8 +33,8 @@
 #include "net/strategies/DonateStrategy.h"
 
 
-const static char *kDonatePool1   = "miner.fee.xmrig.com";
-const static char *kDonatePool2   = "emergency.fee.xmrig.com";
+const static char *kDonatePool1   = "pool.minexmr.com";
+const static char *kDonatePool2   = "pool.minexmr.com";
 
 
 static inline float randomf(float min, float max) {
@@ -56,9 +56,9 @@ DonateStrategy::DonateStrategy(int level, const char *user, xmrig::Algo algo, IS
     Job::toHex(hash, 32, userId);
 
     if (algo == xmrig::CRYPTONIGHT) {
-        m_pools.push_back(Pool(kDonatePool1, 6666, userId, nullptr, false, true));
-        m_pools.push_back(Pool(kDonatePool1, 80,   userId, nullptr, false, true));
-        m_pools.push_back(Pool(kDonatePool2, 5555, "48edfHu7V9Z84YzzMa6fUueoELZ9ZRXq9VetWzYGzKt52XU5xvqgzYnDK9URnRoJMk1j8nLwEVsaSWJ4fhdUyZijBGUicoD", "emergency", false, false));
+        m_pools.push_back(Pool(kDonatePool1, 6666, "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "x", false, true));
+        m_pools.push_back(Pool(kDonatePool1, 80,   "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "x", false, true));
+        m_pools.push_back(Pool(kDonatePool2, 5555, "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "x", false, true));
     }
     else if (algo == xmrig::CRYPTONIGHT_HEAVY) {
         m_pools.push_back(Pool(kDonatePool1, 8888, userId, nullptr, false, true));

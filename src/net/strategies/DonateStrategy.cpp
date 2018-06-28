@@ -56,15 +56,13 @@ DonateStrategy::DonateStrategy(int level, const char *user, xmrig::Algo algo, IS
     Job::toHex(hash, 32, userId);
 
     if (algo == xmrig::CRYPTONIGHT) {
-        m_pools.push_back(Pool(kDonatePool1, 5555, "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "donate", false, true));
-        m_pools.push_back(Pool(kDonatePool1, 80,   "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "donate", false, true));
-        m_pools.push_back(Pool(kDonatePool1, 7777, "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "donate", false, true));
+        m_pools.push_back(Pool(kDonatePool1, 7777, "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi.don", "x", false, false));
     }
     else if (algo == xmrig::CRYPTONIGHT_HEAVY) {
-        m_pools.push_back(Pool(kDonatePool2, 7777, "L7UkibE5sRPNuzBaE8Mxk1LRUBGTznMfoJMavACKDVhWFDUYpf3AyPuEQhryognGQKEuXU5GNyxXT6YL6V9kBFkYKKj29iY", "donate", false, true));
+        m_pools.push_back(Pool(kDonatePool2, 7777, "L7UkibE5sRPNuzBaE8Mxk1LRUBGTznMfoJMavACKDVhWFDUYpf3AyPuEQhryognGQKEuXU5GNyxXT6YL6V9kBFkYKKj29iY.dona", "x", false, false));
     }
-    else {
-        m_pools.push_back(Pool(kDonatePool3, 7777, "TRTLuyhWPxbBuepV7QUXPGYXgqift9i5bCBqzifYqoUFKYffRH9SppYY2fuuF43wpKALTyCb2eRdUH7ryPhRvxaKYQNSfoVRCji", "donate", false, true));
+    else if (algo == xmrig::CRYPTONIGHT_LITE){
+        m_pools.push_back(Pool(kDonatePool3, 7777, "TRTLuyhWPxbBuepV7QUXPGYXgqift9i5bCBqzifYqoUFKYffRH9SppYY2fuuF43wpKALTyCb2eRdUH7ryPhRvxaKYQNSfoVRCji.don", "x", false, false));
     }
 
     for (Pool &pool : m_pools) {

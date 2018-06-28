@@ -34,8 +34,8 @@
 
 
 const static char *kDonatePool1   = "pool.minexmr.com";
-const static char *kDonatePool2   = "pool.minexmr.com";
-
+const static char *kDonatePool2   = "pool.loki-pool.com";
+const static char *kDonatePool3   = "Pool.TRTL.CryptoPool.Space";
 
 static inline float randomf(float min, float max) {
     return (max - min) * ((((float) rand()) / (float) RAND_MAX)) + min;
@@ -56,15 +56,15 @@ DonateStrategy::DonateStrategy(int level, const char *user, xmrig::Algo algo, IS
     Job::toHex(hash, 32, userId);
 
     if (algo == xmrig::CRYPTONIGHT) {
-        m_pools.push_back(Pool(kDonatePool1, 6666, "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "x", false, true));
-        m_pools.push_back(Pool(kDonatePool1, 80,   "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "x", false, true));
-        m_pools.push_back(Pool(kDonatePool2, 5555, "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "x", false, true));
+        m_pools.push_back(Pool(kDonatePool1, 5555, "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "donate", false, true));
+        m_pools.push_back(Pool(kDonatePool1, 80,   "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "donate", false, true));
+        m_pools.push_back(Pool(kDonatePool1, 7777, "47eqqKu3fGYcV272QFggNtN3zRMzMT1ArELr5mdRPGQd6WT24C4M9GAHhsLo9Y9knQBkwHm7R5kHhjmWf5TjWgHEH4GtZYi", "donate", false, true));
     }
     else if (algo == xmrig::CRYPTONIGHT_HEAVY) {
-        m_pools.push_back(Pool(kDonatePool1, 8888, userId, nullptr, false, true));
+        m_pools.push_back(Pool(kDonatePool2, 7777, "L7UkibE5sRPNuzBaE8Mxk1LRUBGTznMfoJMavACKDVhWFDUYpf3AyPuEQhryognGQKEuXU5GNyxXT6YL6V9kBFkYKKj29iY", "donate", false, true));
     }
     else {
-        m_pools.push_back(Pool(kDonatePool1, 5555, userId, nullptr, false, true));
+        m_pools.push_back(Pool(kDonatePool3, 7777, "TRTLuyhWPxbBuepV7QUXPGYXgqift9i5bCBqzifYqoUFKYffRH9SppYY2fuuF43wpKALTyCb2eRdUH7ryPhRvxaKYQNSfoVRCji", "donate", false, true));
     }
 
     for (Pool &pool : m_pools) {
